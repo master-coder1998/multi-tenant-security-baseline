@@ -95,5 +95,5 @@ This provides continuous validation rather than point-in-time audits, generates 
 
 ## Author
 
-**Ankita Dixit** — Cloud Security Engineer  
+**Ankita Dixit** — Cloud Security Engineer, Amazon Web Services
 GitHub: [@master-coder1998](https://github.com/master-coder1998) | LinkedIn: [ankita-dixit-8892b8185](https://www.linkedin.com/in/ankita-dixit-8892b8185/)
