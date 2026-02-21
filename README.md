@@ -233,9 +233,11 @@ python scripts/validate_isolation.py \
 
 ## 👤 Author
 
-**Ankita Dixit** — Cloud Security Engineer
+**Ankita Dixit** — Cloud Security Engineer, Amazon Web Services
 
-Specialising in IAM architecture, multi-account AWS security, and compliance automation.
+5+ years securing AWS environments at scale — IAM architecture, multi-account security frameworks, threat detection, and compliance automation across 50+ organizational accounts.
+
+**Certifications:** AWS Certified Security – Specialty · AWS Certified Solutions Architect – Professional · AWS Certified Advanced Networking – Specialty · HashiCorp Terraform Associate · IAM Subject Matter Expert
 
 - 🐙 GitHub: [@master-coder1998](https://github.com/master-coder1998)
 - 💼 LinkedIn: [ankita-dixit-8892b8185](https://www.linkedin.com/in/ankita-dixit-8892b8185/)
