@@ -1,0 +1,82 @@
+name: Terraform Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Validate Terraform
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.7.0
+
+      - name: Check Terraform formatting
+        run: terraform fmt -check -recursive
+
+      - name: Init and validate — tenant-account
+        working-directory: modules/tenant-account
+        run: |
+          terraform init -backend=false
+          terraform validate
+
+      - name: Init and validate — security-monitoring
+        working-directory: modules/security-monitoring
+        run: |
+          terraform init -backend=false
+          terraform validate
+
+      - name: Init and validate — tenant-kms
+        working-directory: modules/tenant-kms
+        run: |
+          terraform init -backend=false
+          terraform validate
+
+      - name: Init and validate — network-isolation
+        working-directory: modules/network-isolation
+        run: |
+          terraform init -backend=false
+          terraform validate
+
+      - name: Init and validate — example: basic-tenant
+        working-directory: examples/basic-tenant
+        run: |
+          terraform init -backend=false
+          terraform validate
+
+      - name: Init and validate — example: full-platform
+        working-directory: examples/full-platform
+        run: |
+          terraform init -backend=false
+          terraform validate
+
+  python-lint:
+    name: Lint Python Scripts
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt flake8 black
+
+      - name: Black format check
+        run: black --check scripts/
+
+      - name: Flake8 lint
+        run: flake8 scripts/ --max-line-length=120 --exclude=__pycache__

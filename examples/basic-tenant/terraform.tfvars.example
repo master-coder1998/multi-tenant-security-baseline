@@ -1,0 +1,8 @@
+# Copy this file to terraform.tfvars and fill in your values.
+# DO NOT commit terraform.tfvars to version control.
+
+aws_region          = "us-east-1"
+security_account_id = "999999999999"    # Your centralized security account ID
+
+# Optional: populate after deploying the security-monitoring module
+guardduty_detector_id = ""

@@ -1,0 +1,3 @@
+aws_region          = "us-east-1"
+security_account_id = "999999999999"
+security_alert_email = "# your-security-team@example.com"
